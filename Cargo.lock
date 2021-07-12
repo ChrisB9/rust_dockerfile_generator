@@ -127,6 +127,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "dockerfile_generator"
+version = "0.1.1"
+dependencies = [
+ "config",
+ "failure",
+ "failure_derive",
+ "handlebars",
+ "seahorse",
+ "serde 1.0.117",
+ "serde_derive",
+ "serde_json",
+ "terminal_color_builder",
+ "tinytemplate",
+]
+
+[[package]]
 name = "failure"
 version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -153,22 +169,6 @@ name = "fake-simd"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e88a8acf291dafb59c2d96e8f59828f3838bb1a70398823ade51a84de6a6deed"
-
-[[package]]
-name = "generator"
-version = "0.1.1"
-dependencies = [
- "config",
- "failure",
- "failure_derive",
- "handlebars",
- "seahorse",
- "serde 1.0.117",
- "serde_derive",
- "serde_json",
- "terminal_color_builder",
- "tinytemplate",
-]
 
 [[package]]
 name = "generic-array"

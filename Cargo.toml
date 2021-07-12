@@ -1,5 +1,5 @@
 [package]
-name = "generator"
+name = "dockerfile_generator"
 description = "Dockerfile generation with handlebar-templates"
 version = "0.1.1"
 authors = ["Christian Rodriguez Benthake <git@cben.co>"]
