@@ -1,6 +1,5 @@
 use crate::generator_settings::GeneratorSettings;
 use crate::template_parser::Parsing;
-use serde::export::fmt::Debug;
 use serde::Serialize;
 use std::fs;
 use std::fs::File;
@@ -11,7 +10,7 @@ pub fn load_config() -> GeneratorSettings {
     GeneratorSettings::new().unwrap()
 }
 
-pub trait Generate: Serialize + Debug {
+pub trait Generate: Serialize {
     fn new(container_type: Option<String>, run_type: Option<&String>) -> Self;
 
     fn generate(&self) -> Result<String, Box<dyn failure::Fail>> {

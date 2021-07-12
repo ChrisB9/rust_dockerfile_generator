@@ -5,7 +5,6 @@ use handlebars::Handlebars;
 use handlebars::{
     handlebars_helper, Context, Helper, Output, RenderContext, RenderError, Renderable,
 };
-use serde::export::fmt::Debug;
 use serde::Serialize;
 use serde_json::json;
 use std::{
@@ -157,7 +156,7 @@ impl Parsing {
 
     pub fn render<S>(&self, context: &S) -> Result<String, Box<TemplatingError>>
     where
-        S: Serialize + Debug,
+        S: Serialize,
     {
         let mut template = Handlebars::new();
         handlebars_helper!(not: |a: bool| !a);
@@ -175,7 +174,7 @@ impl Parsing {
                 Err(_e) => {
                     return Err(self.get_error(&format!(
                         "Failed parsing template directory for dockerfile {:?} {:?}",
-                        _e, context
+                        _e, json!(context)
                     )));
                 }
             };
