@@ -3,3 +3,4 @@ target
 templates
 settings.toml
 Dockerfile
+*.zip
